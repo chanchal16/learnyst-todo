@@ -11,7 +11,8 @@ export const TodoForm = () => {
     const addTodo = () =>{
         const todoObj = {
             id:uuidv4(),
-            todo:todo
+            todo:todo,
+            isCompleted:false
         }
         todoDispatch(ADD_TODO(todoObj));
         setTodo('')

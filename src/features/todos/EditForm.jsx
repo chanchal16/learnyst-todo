@@ -7,7 +7,7 @@ export const EditForm = ({currentTodo,
   return (
     <div>
         <input type={'text'} value={currentTodo.todo} onChange={onEditInputChange} />
-        <button onClick={()=>onEditFormSubmit(currentTodo.id,currentTodo.todo)}>update</button>
+        <button onClick={()=>onEditFormSubmit(currentTodo.id,currentTodo.todo,currentTodo.isCompleted)}>update</button>
     </div>
   )
 }
