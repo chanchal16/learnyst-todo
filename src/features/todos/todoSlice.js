@@ -3,8 +3,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     todos:[],
     status:'All',
-    selectedTodo:{},
-    isEditMode:false,
 }
 
 export const todoSlice = createSlice({
@@ -12,12 +10,9 @@ export const todoSlice = createSlice({
     initialState,
     reducers:{
         ADD_TODO:(state,action)=>{
-            // state.todos.push(action.payload);
-            // return state;
             state.todos = [...state.todos, action.payload]
         },
         DELETE_TODO:(state,action)=>{
-            // state.todos = action.payload
             state.todos = state.todos.filter(todo=>todo.id !== action.payload)
         },
         UPDATE_TODO:(state,action)=>{        
