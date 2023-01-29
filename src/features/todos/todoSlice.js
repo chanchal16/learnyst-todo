@@ -2,8 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     todos:[],
+    status:'All',
     selectedTodo:{},
-    isEditMode:false
+    isEditMode:false,
 }
 
 export const todoSlice = createSlice({
@@ -22,7 +23,13 @@ export const todoSlice = createSlice({
         UPDATE_TODO:(state,action)=>{        
             state.todos =  state.todos.map(todo=>todo.id === action.payload.id ? action.payload : todo)
         },
+        TODO_COMPLETED:(state,action)=>{
+            state.todos = state.todos.map(todo=>todo.id === action.payload.id ? {...todo,isCompleted:true} : todo)
+        },
+        FILTER_BY_STATE:(state,action)=>{
+            state.status = action.payload
+        }
     },
 })
-export const{ADD_TODO,DELETE_TODO,UPDATE_TODO} = todoSlice.actions
+export const{ADD_TODO,DELETE_TODO,UPDATE_TODO,TODO_COMPLETED,FILTER_BY_STATE} = todoSlice.actions
 export default todoSlice.reducer
