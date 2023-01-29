@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'
 import { ADD_TODO } from './todoSlice';
+import { v4 as uuidv4 } from 'uuid';
 
 export const TodoForm = () => {
     const[todo,setTodo] = useState('');
@@ -9,7 +10,7 @@ export const TodoForm = () => {
 
     const addTodo = () =>{
         const todoObj = {
-            id:new Date().getTime(),
+            id:uuidv4(),
             todo:todo
         }
         todoDispatch(ADD_TODO(todoObj));
