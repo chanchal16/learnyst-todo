@@ -1,7 +1,103 @@
+:root{
+  --primary:#94a3b8;
+  --primary-dark:#64748b;
+  --gray:#2e2e2e;
+  --dark:#475569;
+  --offwhite:#d4e0ef;
+}
+
 #root {
-  /* max-width: 1280px; */
-  /* margin: 0 auto; */
   padding: 2rem;
   text-align: center;
 }
 
+h1{
+  color: var(--dark);
+  margin: 2rem 0;
+}
+form{
+  width: 50%;
+  margin: auto;
+  display: flex;  
+}
+.input-field{
+  width: 100%;
+  outline-color: var(--primary);
+  border: 1px solid var(--primary);
+  font-size: 1rem;
+  padding: 0 8px;
+}
+.form-btn{
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background-color: var(--primary);
+  cursor: pointer;
+  border: none;
+  color: white;
+}
+.form-btn:hover{
+  background-color: var(--primary-dark); 
+}
+
+/* filter */
+.filters-container{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.5rem 0.5rem;
+  gap: 10px;
+  margin: 3rem 1rem;
+}
+.chip {
+  padding: 8px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: var(--offwhite);
+  color: var(--gray);
+}
+.active-filter{
+  background-color: var(--primary-dark);
+  color: white;
+}
+
+/* todo item */
+.todos-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.todo-item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  color: var(--dark);
+  margin: auto;
+  padding: 0.6rem;
+}
+.todo-item h3{
+  margin: 0;
+}
+/* crud btns */
+.btns{
+  background-color: transparent;
+  border: none;
+  color: #8a9bb3;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.btns:hover{
+  color: var(--primary-dark);
+}
+.done-btn{
+  cursor: default;
+}
+/* no tasks */
+.no-tasks{
+  color: var(--primary);
+  margin: 3rem 2rem;
+}
