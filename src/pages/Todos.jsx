@@ -4,6 +4,7 @@ import { EditForm } from '../features/todos/EditForm';
 import { TodoForm } from '../features/todos/TodoForm';
 import { useDispatch, useSelector } from 'react-redux'
 import { UPDATE_TODO } from '../features/todos/todoSlice';
+import { Tabs } from '../components/Tabs';
 
 export const Todos = () => {
   const [isEditing, setIsEditing] = useState(false);
@@ -15,8 +16,8 @@ export const Todos = () => {
     console.log(currentTodo);
   }
 
-  const updateTodo = (id,value) =>{
-    todoDispatch(UPDATE_TODO({id,todo:value}))
+  const updateTodo = (id,value,status) =>{
+    todoDispatch(UPDATE_TODO({id,todo:value,isCompleted:status}))
     setIsEditing(false)  
   }
 
@@ -38,6 +39,7 @@ export const Todos = () => {
       )}
 
       <div>
+        <Tabs/>
         <TodoList handleEditClick={handleEditClick}/>
       </div>
     </div>
